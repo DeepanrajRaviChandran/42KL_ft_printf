@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_unsignednbr.c                               :+:      :+:    :+:   */
+/*   ft_put_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravi-ch <dravi-ch@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 18:57:04 by dravi-ch          #+#    #+#             */
-/*   Updated: 2023/06/03 15:46:28 by dravi-ch         ###   ########.fr       */
+/*   Created: 2023/06/03 13:41:03 by dravi-ch          #+#    #+#             */
+/*   Updated: 2023/06/03 15:45:59 by dravi-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_nbr_len(unsigned int n)
+/*Writes the string and return the length of string*/
+int	ft_put_str(char *s)
 {
 	int	len;
 
 	len = 0;
-	while (n != 0)
+	if (!s)
 	{
-		n /= 10;
+		ft_put_str("(null)");
+		return (6);
+	}
+	while (s[len])
+	{
+		write (1, &s[len], 1);
 		len++;
 	}
 	return (len);
-}
-
-/*Writes the unsigned number and return the length of the number*/
-int	ft_put_unsignednbr(unsigned int n)
-{
-	if (n >= 10)
-	{
-		ft_put_unsignednbr(n / 10);
-		ft_put_unsignednbr(n % 10);
-	}
-	else
-		ft_putchar_fd(n + '0', 1);
-	return (ft_nbr_len(n));
 }

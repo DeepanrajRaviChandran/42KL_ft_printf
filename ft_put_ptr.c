@@ -6,12 +6,13 @@
 /*   By: dravi-ch <dravi-ch@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 17:29:30 by dravi-ch          #+#    #+#             */
-/*   Updated: 2023/06/02 17:51:33 by dravi-ch         ###   ########.fr       */
+/*   Updated: 2023/06/03 14:23:22 by dravi-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+/*Writes pointer address and returns the lenght of the address*/
 int	ft_put_ptr(unsigned long long ptr)
 {
 	int	len;

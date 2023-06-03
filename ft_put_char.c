@@ -1,39 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_unsignednbr.c                               :+:      :+:    :+:   */
+/*   ft_put_char.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dravi-ch <dravi-ch@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 18:57:04 by dravi-ch          #+#    #+#             */
-/*   Updated: 2023/06/03 15:46:28 by dravi-ch         ###   ########.fr       */
+/*   Created: 2023/06/03 13:34:46 by dravi-ch          #+#    #+#             */
+/*   Updated: 2023/06/03 14:19:10 by dravi-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_nbr_len(unsigned int n)
+/*Used for c format specifier and return 1*/
+int	ft_put_char(char c)
 {
-	int	len;
-
-	len = 0;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-/*Writes the unsigned number and return the length of the number*/
-int	ft_put_unsignednbr(unsigned int n)
-{
-	if (n >= 10)
-	{
-		ft_put_unsignednbr(n / 10);
-		ft_put_unsignednbr(n % 10);
-	}
-	else
-		ft_putchar_fd(n + '0', 1);
-	return (ft_nbr_len(n));
+	write(1, &c, 1);
+	return (1);
 }
