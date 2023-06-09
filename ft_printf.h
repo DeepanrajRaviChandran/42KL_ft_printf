@@ -6,7 +6,7 @@
 /*   By: dravi-ch <dravi-ch@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 19:23:05 by dravi-ch          #+#    #+#             */
-/*   Updated: 2023/06/03 14:01:48 by dravi-ch         ###   ########.fr       */
+/*   Updated: 2023/06/09 12:04:56 by dravi-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,15 @@
 
 /*Number Specifiers*/
 int	ft_put_hex(unsigned int n, const char f_s);
-int	ft_put_ptr(unsigned long long ptr);
+int	ft_put_ptr(uintptr_t ptr);
 int	ft_put_unsignednbr(unsigned int n);
 int	ft_put_nbr(int n);
 
 /*String Specifiers*/
-int	ft_put_char(char c);
+int	ft_put_char(int c);
 int	ft_put_str(char *s);
+
+/*Main*/
+int	ft_printf(const char *str, ...);
 
 #endif
