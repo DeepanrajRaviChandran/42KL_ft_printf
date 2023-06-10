@@ -6,7 +6,7 @@
 /*   By: dravi-ch <dravi-ch@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/02 18:57:04 by dravi-ch          #+#    #+#             */
-/*   Updated: 2023/06/03 15:46:28 by dravi-ch         ###   ########.fr       */
+/*   Updated: 2023/06/10 22:47:11 by dravi-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ static int	ft_nbr_len(unsigned int n)
 	return (len);
 }
 
-/*Writes the unsigned number and return the length of the number*/
-int	ft_put_unsignednbr(unsigned int n)
+static void	ft_unsignednbr(unsigned int n)
 {
 	if (n >= 10)
 	{
@@ -35,5 +34,22 @@ int	ft_put_unsignednbr(unsigned int n)
 	}
 	else
 		ft_putchar_fd(n + '0', 1);
-	return (ft_nbr_len(n));
+}
+
+/*Writes the unsigned number and return the length of the number*/
+int	ft_put_unsignednbr(unsigned int n)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+	{
+		len += write (1, "0", 1);
+	}
+	else
+	{
+		ft_unsignednbr(n);
+		len += ft_nbr_len(n);
+	}
+	return (len);
 }

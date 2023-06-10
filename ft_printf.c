@@ -6,7 +6,7 @@
 /*   By: dravi-ch <dravi-ch@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 14:55:02 by dravi-ch          #+#    #+#             */
-/*   Updated: 2023/06/09 12:04:30 by dravi-ch         ###   ########.fr       */
+/*   Updated: 2023/06/10 19:17:45 by dravi-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ int	ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%')
+		{
 			len += ft_format(args, str[i + 1]);
+			i++;
+		}
 		else
 			len += ft_put_char(str[i]);
 		i++;
