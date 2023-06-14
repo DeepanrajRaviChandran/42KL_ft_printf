@@ -6,7 +6,7 @@
 /*   By: dravi-ch <dravi-ch@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/03 13:03:42 by dravi-ch          #+#    #+#             */
-/*   Updated: 2023/06/14 13:10:12 by dravi-ch         ###   ########.fr       */
+/*   Updated: 2023/06/14 13:46:47 by dravi-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ int	ft_put_nbr(int n)
 	int		len;
 	char	*num;
 
+	if (n == -2147483648)
+	{
+		write (1, "-2147483648", 11);
+		return (11);
+	}
 	num = ft_itoa(n);
 	len = ft_put_str(num);
 	free (num);
